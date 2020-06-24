@@ -92,6 +92,7 @@ namespace UnitsNet
                     new UnitInfo<DensityUnit>(DensityUnit.PoundPerImperialGallon, BaseUnits.Undefined),
                     new UnitInfo<DensityUnit>(DensityUnit.PoundPerUSGallon, BaseUnits.Undefined),
                     new UnitInfo<DensityUnit>(DensityUnit.SlugPerCubicFoot, new BaseUnits(length: LengthUnit.Foot, mass: MassUnit.Slug)),
+                    new UnitInfo<DensityUnit>(DensityUnit.SpecificGravity, BaseUnits.Undefined),
                     new UnitInfo<DensityUnit>(DensityUnit.TonnePerCubicCentimeter, new BaseUnits(length: LengthUnit.Centimeter, mass: MassUnit.Tonne)),
                     new UnitInfo<DensityUnit>(DensityUnit.TonnePerCubicMeter, new BaseUnits(length: LengthUnit.Meter, mass: MassUnit.Tonne)),
                     new UnitInfo<DensityUnit>(DensityUnit.TonnePerCubicMillimeter, new BaseUnits(length: LengthUnit.Millimeter, mass: MassUnit.Tonne)),
@@ -391,6 +392,11 @@ namespace UnitsNet
         ///     Get Density in SlugsPerCubicFoot.
         /// </summary>
         public double SlugsPerCubicFoot => As(DensityUnit.SlugPerCubicFoot);
+
+        /// <summary>
+        ///     Get Density in SpecificGravity.
+        /// </summary>
+        public double SpecificGravity => As(DensityUnit.SpecificGravity);
 
         /// <summary>
         ///     Get Density in TonnesPerCubicCentimeter.
@@ -768,6 +774,15 @@ namespace UnitsNet
         {
             double value = (double) slugspercubicfoot;
             return new Density(value, DensityUnit.SlugPerCubicFoot);
+        }
+        /// <summary>
+        ///     Get Density from SpecificGravity.
+        /// </summary>
+        /// <exception cref="ArgumentException">If value is NaN or Infinity.</exception>
+        public static Density FromSpecificGravity(QuantityValue specificgravity)
+        {
+            double value = (double) specificgravity;
+            return new Density(value, DensityUnit.SpecificGravity);
         }
         /// <summary>
         ///     Get Density from TonnesPerCubicCentimeter.
@@ -1262,6 +1277,7 @@ namespace UnitsNet
                 case DensityUnit.PoundPerImperialGallon: return _value*9.9776398e1;
                 case DensityUnit.PoundPerUSGallon: return _value*1.19826427e2;
                 case DensityUnit.SlugPerCubicFoot: return _value*515.378818;
+                case DensityUnit.SpecificGravity: return _value*1e3;
                 case DensityUnit.TonnePerCubicCentimeter: return _value/1e-9;
                 case DensityUnit.TonnePerCubicMeter: return _value/0.001;
                 case DensityUnit.TonnePerCubicMillimeter: return _value/1e-12;
@@ -1327,6 +1343,7 @@ namespace UnitsNet
                 case DensityUnit.PoundPerImperialGallon: return baseUnitValue/9.9776398e1;
                 case DensityUnit.PoundPerUSGallon: return baseUnitValue/1.19826427e2;
                 case DensityUnit.SlugPerCubicFoot: return baseUnitValue*0.00194032033;
+                case DensityUnit.SpecificGravity: return baseUnitValue/1e3;
                 case DensityUnit.TonnePerCubicCentimeter: return baseUnitValue*1e-9;
                 case DensityUnit.TonnePerCubicMeter: return baseUnitValue*0.001;
                 case DensityUnit.TonnePerCubicMillimeter: return baseUnitValue*1e-12;

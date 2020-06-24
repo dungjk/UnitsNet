@@ -318,6 +318,8 @@ namespace UnitsNet
             unitConverter.SetConversionFunction<Density>(DensityUnit.PoundPerUSGallon, Density.BaseUnit, q => q.ToBaseUnit());
             unitConverter.SetConversionFunction<Density>(Density.BaseUnit, DensityUnit.SlugPerCubicFoot, q => q.ToUnit(DensityUnit.SlugPerCubicFoot));
             unitConverter.SetConversionFunction<Density>(DensityUnit.SlugPerCubicFoot, Density.BaseUnit, q => q.ToBaseUnit());
+            unitConverter.SetConversionFunction<Density>(Density.BaseUnit, DensityUnit.SpecificGravity, q => q.ToUnit(DensityUnit.SpecificGravity));
+            unitConverter.SetConversionFunction<Density>(DensityUnit.SpecificGravity, Density.BaseUnit, q => q.ToBaseUnit());
             unitConverter.SetConversionFunction<Density>(Density.BaseUnit, DensityUnit.TonnePerCubicCentimeter, q => q.ToUnit(DensityUnit.TonnePerCubicCentimeter));
             unitConverter.SetConversionFunction<Density>(DensityUnit.TonnePerCubicCentimeter, Density.BaseUnit, q => q.ToBaseUnit());
             unitConverter.SetConversionFunction<Density>(Density.BaseUnit, DensityUnit.TonnePerCubicMeter, q => q.ToUnit(DensityUnit.TonnePerCubicMeter));

@@ -176,6 +176,10 @@ namespace UnitsNet.NumberExtensions.NumberToDensity
         public static Density SlugsPerCubicFoot<T>(this T value) =>
             Density.FromSlugsPerCubicFoot(Convert.ToDouble(value));
 
+        /// <inheritdoc cref="Density.FromSpecificGravity(UnitsNet.QuantityValue)" />
+        public static Density SpecificGravity<T>(this T value) =>
+            Density.FromSpecificGravity(Convert.ToDouble(value));
+
         /// <inheritdoc cref="Density.FromTonnesPerCubicCentimeter(UnitsNet.QuantityValue)" />
         public static Density TonnesPerCubicCentimeter<T>(this T value) =>
             Density.FromTonnesPerCubicCentimeter(Convert.ToDouble(value));

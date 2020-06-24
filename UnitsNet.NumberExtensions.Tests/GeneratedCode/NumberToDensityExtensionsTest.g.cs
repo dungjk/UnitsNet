@@ -173,6 +173,10 @@ namespace UnitsNet.Tests
             Assert.Equal(Density.FromSlugsPerCubicFoot(2), 2.SlugsPerCubicFoot());
 
         [Fact]
+        public void NumberToSpecificGravityTest() =>
+            Assert.Equal(Density.FromSpecificGravity(2), 2.SpecificGravity());
+
+        [Fact]
         public void NumberToTonnesPerCubicCentimeterTest() =>
             Assert.Equal(Density.FromTonnesPerCubicCentimeter(2), 2.TonnesPerCubicCentimeter());
 

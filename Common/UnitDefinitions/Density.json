@@ -241,6 +241,18 @@
           "Abbreviations": [ "kg/l" ]
         }
       ]
+    },
+    {
+      "SingularName": "SpecificGravity",
+      "PluralName": "SpecificGravity",
+      "FromUnitToBaseFunc": "x*1e3",
+      "FromBaseToUnitFunc": "x/1e3",
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "sg", "s.g" ]
+        }
+      ]
     }
   ]
 }

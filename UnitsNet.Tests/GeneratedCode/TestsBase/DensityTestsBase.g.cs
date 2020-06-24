@@ -73,6 +73,7 @@ namespace UnitsNet.Tests
         protected abstract double PoundsPerImperialGallonInOneKilogramPerCubicMeter { get; }
         protected abstract double PoundsPerUSGallonInOneKilogramPerCubicMeter { get; }
         protected abstract double SlugsPerCubicFootInOneKilogramPerCubicMeter { get; }
+        protected abstract double SpecificGravityInOneKilogramPerCubicMeter { get; }
         protected abstract double TonnesPerCubicCentimeterInOneKilogramPerCubicMeter { get; }
         protected abstract double TonnesPerCubicMeterInOneKilogramPerCubicMeter { get; }
         protected abstract double TonnesPerCubicMillimeterInOneKilogramPerCubicMeter { get; }
@@ -115,6 +116,7 @@ namespace UnitsNet.Tests
         protected virtual double PoundsPerImperialGallonTolerance { get { return 1e-5; } }
         protected virtual double PoundsPerUSGallonTolerance { get { return 1e-5; } }
         protected virtual double SlugsPerCubicFootTolerance { get { return 1e-5; } }
+        protected virtual double SpecificGravityTolerance { get { return 1e-5; } }
         protected virtual double TonnesPerCubicCentimeterTolerance { get { return 1e-5; } }
         protected virtual double TonnesPerCubicMeterTolerance { get { return 1e-5; } }
         protected virtual double TonnesPerCubicMillimeterTolerance { get { return 1e-5; } }
@@ -216,6 +218,7 @@ namespace UnitsNet.Tests
             AssertEx.EqualTolerance(PoundsPerImperialGallonInOneKilogramPerCubicMeter, kilogrampercubicmeter.PoundsPerImperialGallon, PoundsPerImperialGallonTolerance);
             AssertEx.EqualTolerance(PoundsPerUSGallonInOneKilogramPerCubicMeter, kilogrampercubicmeter.PoundsPerUSGallon, PoundsPerUSGallonTolerance);
             AssertEx.EqualTolerance(SlugsPerCubicFootInOneKilogramPerCubicMeter, kilogrampercubicmeter.SlugsPerCubicFoot, SlugsPerCubicFootTolerance);
+            AssertEx.EqualTolerance(SpecificGravityInOneKilogramPerCubicMeter, kilogrampercubicmeter.SpecificGravity, SpecificGravityTolerance);
             AssertEx.EqualTolerance(TonnesPerCubicCentimeterInOneKilogramPerCubicMeter, kilogrampercubicmeter.TonnesPerCubicCentimeter, TonnesPerCubicCentimeterTolerance);
             AssertEx.EqualTolerance(TonnesPerCubicMeterInOneKilogramPerCubicMeter, kilogrampercubicmeter.TonnesPerCubicMeter, TonnesPerCubicMeterTolerance);
             AssertEx.EqualTolerance(TonnesPerCubicMillimeterInOneKilogramPerCubicMeter, kilogrampercubicmeter.TonnesPerCubicMillimeter, TonnesPerCubicMillimeterTolerance);
@@ -372,17 +375,21 @@ namespace UnitsNet.Tests
             AssertEx.EqualTolerance(1, quantity36.SlugsPerCubicFoot, SlugsPerCubicFootTolerance);
             Assert.Equal(DensityUnit.SlugPerCubicFoot, quantity36.Unit);
 
-            var quantity37 = Density.From(1, DensityUnit.TonnePerCubicCentimeter);
-            AssertEx.EqualTolerance(1, quantity37.TonnesPerCubicCentimeter, TonnesPerCubicCentimeterTolerance);
-            Assert.Equal(DensityUnit.TonnePerCubicCentimeter, quantity37.Unit);
+            var quantity37 = Density.From(1, DensityUnit.SpecificGravity);
+            AssertEx.EqualTolerance(1, quantity37.SpecificGravity, SpecificGravityTolerance);
+            Assert.Equal(DensityUnit.SpecificGravity, quantity37.Unit);
 
-            var quantity38 = Density.From(1, DensityUnit.TonnePerCubicMeter);
-            AssertEx.EqualTolerance(1, quantity38.TonnesPerCubicMeter, TonnesPerCubicMeterTolerance);
-            Assert.Equal(DensityUnit.TonnePerCubicMeter, quantity38.Unit);
+            var quantity38 = Density.From(1, DensityUnit.TonnePerCubicCentimeter);
+            AssertEx.EqualTolerance(1, quantity38.TonnesPerCubicCentimeter, TonnesPerCubicCentimeterTolerance);
+            Assert.Equal(DensityUnit.TonnePerCubicCentimeter, quantity38.Unit);
 
-            var quantity39 = Density.From(1, DensityUnit.TonnePerCubicMillimeter);
-            AssertEx.EqualTolerance(1, quantity39.TonnesPerCubicMillimeter, TonnesPerCubicMillimeterTolerance);
-            Assert.Equal(DensityUnit.TonnePerCubicMillimeter, quantity39.Unit);
+            var quantity39 = Density.From(1, DensityUnit.TonnePerCubicMeter);
+            AssertEx.EqualTolerance(1, quantity39.TonnesPerCubicMeter, TonnesPerCubicMeterTolerance);
+            Assert.Equal(DensityUnit.TonnePerCubicMeter, quantity39.Unit);
+
+            var quantity40 = Density.From(1, DensityUnit.TonnePerCubicMillimeter);
+            AssertEx.EqualTolerance(1, quantity40.TonnesPerCubicMillimeter, TonnesPerCubicMillimeterTolerance);
+            Assert.Equal(DensityUnit.TonnePerCubicMillimeter, quantity40.Unit);
 
         }
 
@@ -440,6 +447,7 @@ namespace UnitsNet.Tests
             AssertEx.EqualTolerance(PoundsPerImperialGallonInOneKilogramPerCubicMeter, kilogrampercubicmeter.As(DensityUnit.PoundPerImperialGallon), PoundsPerImperialGallonTolerance);
             AssertEx.EqualTolerance(PoundsPerUSGallonInOneKilogramPerCubicMeter, kilogrampercubicmeter.As(DensityUnit.PoundPerUSGallon), PoundsPerUSGallonTolerance);
             AssertEx.EqualTolerance(SlugsPerCubicFootInOneKilogramPerCubicMeter, kilogrampercubicmeter.As(DensityUnit.SlugPerCubicFoot), SlugsPerCubicFootTolerance);
+            AssertEx.EqualTolerance(SpecificGravityInOneKilogramPerCubicMeter, kilogrampercubicmeter.As(DensityUnit.SpecificGravity), SpecificGravityTolerance);
             AssertEx.EqualTolerance(TonnesPerCubicCentimeterInOneKilogramPerCubicMeter, kilogrampercubicmeter.As(DensityUnit.TonnePerCubicCentimeter), TonnesPerCubicCentimeterTolerance);
             AssertEx.EqualTolerance(TonnesPerCubicMeterInOneKilogramPerCubicMeter, kilogrampercubicmeter.As(DensityUnit.TonnePerCubicMeter), TonnesPerCubicMeterTolerance);
             AssertEx.EqualTolerance(TonnesPerCubicMillimeterInOneKilogramPerCubicMeter, kilogrampercubicmeter.As(DensityUnit.TonnePerCubicMillimeter), TonnesPerCubicMillimeterTolerance);
@@ -598,6 +606,10 @@ namespace UnitsNet.Tests
             AssertEx.EqualTolerance(SlugsPerCubicFootInOneKilogramPerCubicMeter, (double)slugpercubicfootQuantity.Value, SlugsPerCubicFootTolerance);
             Assert.Equal(DensityUnit.SlugPerCubicFoot, slugpercubicfootQuantity.Unit);
 
+            var specificgravityQuantity = kilogrampercubicmeter.ToUnit(DensityUnit.SpecificGravity);
+            AssertEx.EqualTolerance(SpecificGravityInOneKilogramPerCubicMeter, (double)specificgravityQuantity.Value, SpecificGravityTolerance);
+            Assert.Equal(DensityUnit.SpecificGravity, specificgravityQuantity.Unit);
+
             var tonnepercubiccentimeterQuantity = kilogrampercubicmeter.ToUnit(DensityUnit.TonnePerCubicCentimeter);
             AssertEx.EqualTolerance(TonnesPerCubicCentimeterInOneKilogramPerCubicMeter, (double)tonnepercubiccentimeterQuantity.Value, TonnesPerCubicCentimeterTolerance);
             Assert.Equal(DensityUnit.TonnePerCubicCentimeter, tonnepercubiccentimeterQuantity.Unit);
@@ -652,6 +664,7 @@ namespace UnitsNet.Tests
             AssertEx.EqualTolerance(1, Density.FromPoundsPerImperialGallon(kilogrampercubicmeter.PoundsPerImperialGallon).KilogramsPerCubicMeter, PoundsPerImperialGallonTolerance);
             AssertEx.EqualTolerance(1, Density.FromPoundsPerUSGallon(kilogrampercubicmeter.PoundsPerUSGallon).KilogramsPerCubicMeter, PoundsPerUSGallonTolerance);
             AssertEx.EqualTolerance(1, Density.FromSlugsPerCubicFoot(kilogrampercubicmeter.SlugsPerCubicFoot).KilogramsPerCubicMeter, SlugsPerCubicFootTolerance);
+            AssertEx.EqualTolerance(1, Density.FromSpecificGravity(kilogrampercubicmeter.SpecificGravity).KilogramsPerCubicMeter, SpecificGravityTolerance);
             AssertEx.EqualTolerance(1, Density.FromTonnesPerCubicCentimeter(kilogrampercubicmeter.TonnesPerCubicCentimeter).KilogramsPerCubicMeter, TonnesPerCubicCentimeterTolerance);
             AssertEx.EqualTolerance(1, Density.FromTonnesPerCubicMeter(kilogrampercubicmeter.TonnesPerCubicMeter).KilogramsPerCubicMeter, TonnesPerCubicMeterTolerance);
             AssertEx.EqualTolerance(1, Density.FromTonnesPerCubicMillimeter(kilogrampercubicmeter.TonnesPerCubicMillimeter).KilogramsPerCubicMeter, TonnesPerCubicMillimeterTolerance);
@@ -848,6 +861,7 @@ namespace UnitsNet.Tests
                 Assert.Equal("1 ppg (imp.)", new Density(1, DensityUnit.PoundPerImperialGallon).ToString());
                 Assert.Equal("1 ppg (U.S.)", new Density(1, DensityUnit.PoundPerUSGallon).ToString());
                 Assert.Equal("1 slug/ft³", new Density(1, DensityUnit.SlugPerCubicFoot).ToString());
+                Assert.Equal("1 sg", new Density(1, DensityUnit.SpecificGravity).ToString());
                 Assert.Equal("1 t/cm³", new Density(1, DensityUnit.TonnePerCubicCentimeter).ToString());
                 Assert.Equal("1 t/m³", new Density(1, DensityUnit.TonnePerCubicMeter).ToString());
                 Assert.Equal("1 t/mm³", new Density(1, DensityUnit.TonnePerCubicMillimeter).ToString());
@@ -901,6 +915,7 @@ namespace UnitsNet.Tests
             Assert.Equal("1 ppg (imp.)", new Density(1, DensityUnit.PoundPerImperialGallon).ToString(swedishCulture));
             Assert.Equal("1 ppg (U.S.)", new Density(1, DensityUnit.PoundPerUSGallon).ToString(swedishCulture));
             Assert.Equal("1 slug/ft³", new Density(1, DensityUnit.SlugPerCubicFoot).ToString(swedishCulture));
+            Assert.Equal("1 sg", new Density(1, DensityUnit.SpecificGravity).ToString(swedishCulture));
             Assert.Equal("1 t/cm³", new Density(1, DensityUnit.TonnePerCubicCentimeter).ToString(swedishCulture));
             Assert.Equal("1 t/m³", new Density(1, DensityUnit.TonnePerCubicMeter).ToString(swedishCulture));
             Assert.Equal("1 t/mm³", new Density(1, DensityUnit.TonnePerCubicMillimeter).ToString(swedishCulture));

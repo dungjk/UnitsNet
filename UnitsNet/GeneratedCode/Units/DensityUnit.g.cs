@@ -63,6 +63,7 @@ namespace UnitsNet.Units
         PoundPerImperialGallon,
         PoundPerUSGallon,
         SlugPerCubicFoot,
+        SpecificGravity,
         TonnePerCubicCentimeter,
         TonnePerCubicMeter,
         TonnePerCubicMillimeter,

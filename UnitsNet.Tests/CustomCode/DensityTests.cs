@@ -41,6 +41,8 @@ namespace UnitsNet.Tests.CustomCode
 
         protected override double SlugsPerCubicFootInOneKilogramPerCubicMeter => 0.00194032;
 
+        protected override double SpecificGravityInOneKilogramPerCubicMeter => 1e-3;
+
         protected override double CentigramsPerDeciLiterInOneKilogramPerCubicMeter => 1e1;
 
         protected override double CentigramsPerLiterInOneKilogramPerCubicMeter => 1e2;

@@ -222,6 +222,7 @@ namespace UnitsNet
                 ("en-US", typeof(DensityUnit), (int)DensityUnit.PoundPerImperialGallon, new string[]{"ppg (imp.)"}),
                 ("en-US", typeof(DensityUnit), (int)DensityUnit.PoundPerUSGallon, new string[]{"ppg (U.S.)"}),
                 ("en-US", typeof(DensityUnit), (int)DensityUnit.SlugPerCubicFoot, new string[]{"slug/ft³"}),
+                ("en-US", typeof(DensityUnit), (int)DensityUnit.SpecificGravity, new string[]{"sg", "s.g"}),
                 ("en-US", typeof(DensityUnit), (int)DensityUnit.TonnePerCubicCentimeter, new string[]{"t/cm³"}),
                 ("en-US", typeof(DensityUnit), (int)DensityUnit.TonnePerCubicMeter, new string[]{"t/m³"}),
                 ("en-US", typeof(DensityUnit), (int)DensityUnit.TonnePerCubicMillimeter, new string[]{"t/mm³"}),

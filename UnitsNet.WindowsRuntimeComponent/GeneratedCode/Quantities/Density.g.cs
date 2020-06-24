@@ -344,6 +344,11 @@ namespace UnitsNet
         public double SlugsPerCubicFoot => As(DensityUnit.SlugPerCubicFoot);
 
         /// <summary>
+        ///     Get Density in SpecificGravity.
+        /// </summary>
+        public double SpecificGravity => As(DensityUnit.SpecificGravity);
+
+        /// <summary>
         ///     Get Density in TonnesPerCubicCentimeter.
         /// </summary>
         public double TonnesPerCubicCentimeter => As(DensityUnit.TonnePerCubicCentimeter);
@@ -759,6 +764,16 @@ namespace UnitsNet
             return new Density(value, DensityUnit.SlugPerCubicFoot);
         }
         /// <summary>
+        ///     Get Density from SpecificGravity.
+        /// </summary>
+        /// <exception cref="ArgumentException">If value is NaN or Infinity.</exception>
+        [Windows.Foundation.Metadata.DefaultOverload]
+        public static Density FromSpecificGravity(double specificgravity)
+        {
+            double value = (double) specificgravity;
+            return new Density(value, DensityUnit.SpecificGravity);
+        }
+        /// <summary>
         ///     Get Density from TonnesPerCubicCentimeter.
         /// </summary>
         /// <exception cref="ArgumentException">If value is NaN or Infinity.</exception>
@@ -1116,6 +1131,7 @@ namespace UnitsNet
                 case DensityUnit.PoundPerImperialGallon: return _value*9.9776398e1;
                 case DensityUnit.PoundPerUSGallon: return _value*1.19826427e2;
                 case DensityUnit.SlugPerCubicFoot: return _value*515.378818;
+                case DensityUnit.SpecificGravity: return _value*1e3;
                 case DensityUnit.TonnePerCubicCentimeter: return _value/1e-9;
                 case DensityUnit.TonnePerCubicMeter: return _value/0.001;
                 case DensityUnit.TonnePerCubicMillimeter: return _value/1e-12;
@@ -1170,6 +1186,7 @@ namespace UnitsNet
                 case DensityUnit.PoundPerImperialGallon: return baseUnitValue/9.9776398e1;
                 case DensityUnit.PoundPerUSGallon: return baseUnitValue/1.19826427e2;
                 case DensityUnit.SlugPerCubicFoot: return baseUnitValue*0.00194032033;
+                case DensityUnit.SpecificGravity: return baseUnitValue/1e3;
                 case DensityUnit.TonnePerCubicCentimeter: return baseUnitValue*1e-9;
                 case DensityUnit.TonnePerCubicMeter: return baseUnitValue*0.001;
                 case DensityUnit.TonnePerCubicMillimeter: return baseUnitValue*1e-12;
