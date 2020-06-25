@@ -271,6 +271,8 @@ namespace UnitsNet
             unitConverter.SetConversionFunction<Density>(DensityUnit.GramPerMilliliter, Density.BaseUnit, q => q.ToBaseUnit());
             unitConverter.SetConversionFunction<Density>(Density.BaseUnit, DensityUnit.KilogramPerCubicCentimeter, q => q.ToUnit(DensityUnit.KilogramPerCubicCentimeter));
             unitConverter.SetConversionFunction<Density>(DensityUnit.KilogramPerCubicCentimeter, Density.BaseUnit, q => q.ToBaseUnit());
+            unitConverter.SetConversionFunction<Density>(Density.BaseUnit, DensityUnit.KilogramPerCubicDecimeter, q => q.ToUnit(DensityUnit.KilogramPerCubicDecimeter));
+            unitConverter.SetConversionFunction<Density>(DensityUnit.KilogramPerCubicDecimeter, Density.BaseUnit, q => q.ToBaseUnit());
             unitConverter.SetConversionFunction<Density>(Density.BaseUnit, Density.BaseUnit, q => q);
             unitConverter.SetConversionFunction<Density>(Density.BaseUnit, DensityUnit.KilogramPerCubicMillimeter, q => q.ToUnit(DensityUnit.KilogramPerCubicMillimeter));
             unitConverter.SetConversionFunction<Density>(DensityUnit.KilogramPerCubicMillimeter, Density.BaseUnit, q => q.ToBaseUnit());

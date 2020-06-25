@@ -80,6 +80,10 @@ namespace UnitsNet.NumberExtensions.NumberToDensity
         public static Density KilogramsPerCubicCentimeter<T>(this T value) =>
             Density.FromKilogramsPerCubicCentimeter(Convert.ToDouble(value));
 
+        /// <inheritdoc cref="Density.FromKilogramsPerCubicDecimeter(UnitsNet.QuantityValue)" />
+        public static Density KilogramsPerCubicDecimeter<T>(this T value) =>
+            Density.FromKilogramsPerCubicDecimeter(Convert.ToDouble(value));
+
         /// <inheritdoc cref="Density.FromKilogramsPerCubicMeter(UnitsNet.QuantityValue)" />
         public static Density KilogramsPerCubicMeter<T>(this T value) =>
             Density.FromKilogramsPerCubicMeter(Convert.ToDouble(value));

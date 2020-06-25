@@ -224,6 +224,11 @@ namespace UnitsNet
         public double KilogramsPerCubicCentimeter => As(DensityUnit.KilogramPerCubicCentimeter);
 
         /// <summary>
+        ///     Get Density in KilogramsPerCubicDecimeter.
+        /// </summary>
+        public double KilogramsPerCubicDecimeter => As(DensityUnit.KilogramPerCubicDecimeter);
+
+        /// <summary>
         ///     Get Density in KilogramsPerCubicMeter.
         /// </summary>
         public double KilogramsPerCubicMeter => As(DensityUnit.KilogramPerCubicMeter);
@@ -522,6 +527,16 @@ namespace UnitsNet
         {
             double value = (double) kilogramspercubiccentimeter;
             return new Density(value, DensityUnit.KilogramPerCubicCentimeter);
+        }
+        /// <summary>
+        ///     Get Density from KilogramsPerCubicDecimeter.
+        /// </summary>
+        /// <exception cref="ArgumentException">If value is NaN or Infinity.</exception>
+        [Windows.Foundation.Metadata.DefaultOverload]
+        public static Density FromKilogramsPerCubicDecimeter(double kilogramspercubicdecimeter)
+        {
+            double value = (double) kilogramspercubicdecimeter;
+            return new Density(value, DensityUnit.KilogramPerCubicDecimeter);
         }
         /// <summary>
         ///     Get Density from KilogramsPerCubicMeter.
@@ -1107,6 +1122,7 @@ namespace UnitsNet
                 case DensityUnit.GramPerLiter: return _value/1;
                 case DensityUnit.GramPerMilliliter: return _value/1e-3;
                 case DensityUnit.KilogramPerCubicCentimeter: return (_value/1e-3) * 1e3d;
+                case DensityUnit.KilogramPerCubicDecimeter: return _value*1e3;
                 case DensityUnit.KilogramPerCubicMeter: return (_value/1e3) * 1e3d;
                 case DensityUnit.KilogramPerCubicMillimeter: return (_value/1e-6) * 1e3d;
                 case DensityUnit.KilogramPerLiter: return _value*1e3;
@@ -1162,6 +1178,7 @@ namespace UnitsNet
                 case DensityUnit.GramPerLiter: return baseUnitValue*1;
                 case DensityUnit.GramPerMilliliter: return baseUnitValue*1e-3;
                 case DensityUnit.KilogramPerCubicCentimeter: return (baseUnitValue*1e-3) / 1e3d;
+                case DensityUnit.KilogramPerCubicDecimeter: return baseUnitValue/1e3;
                 case DensityUnit.KilogramPerCubicMeter: return (baseUnitValue*1e3) / 1e3d;
                 case DensityUnit.KilogramPerCubicMillimeter: return (baseUnitValue*1e-6) / 1e3d;
                 case DensityUnit.KilogramPerLiter: return baseUnitValue/1e3;

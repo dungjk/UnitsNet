@@ -77,6 +77,10 @@ namespace UnitsNet.Tests
             Assert.Equal(Density.FromKilogramsPerCubicCentimeter(2), 2.KilogramsPerCubicCentimeter());
 
         [Fact]
+        public void NumberToKilogramsPerCubicDecimeterTest() =>
+            Assert.Equal(Density.FromKilogramsPerCubicDecimeter(2), 2.KilogramsPerCubicDecimeter());
+
+        [Fact]
         public void NumberToKilogramsPerCubicMeterTest() =>
             Assert.Equal(Density.FromKilogramsPerCubicMeter(2), 2.KilogramsPerCubicMeter());
 

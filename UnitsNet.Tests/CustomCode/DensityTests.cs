@@ -16,6 +16,7 @@ namespace UnitsNet.Tests.CustomCode
         protected override double GramsPerCubicMillimeterInOneKilogramPerCubicMeter => 1e-6;
 
         protected override double KilogramsPerCubicCentimeterInOneKilogramPerCubicMeter => 1e-6;
+        protected override double KilogramsPerCubicDecimeterInOneKilogramPerCubicMeter => 1e-3;
 
         protected override double KilogramsPerCubicMeterInOneKilogramPerCubicMeter => 1;
 

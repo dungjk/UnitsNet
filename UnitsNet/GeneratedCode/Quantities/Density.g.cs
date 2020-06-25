@@ -68,6 +68,7 @@ namespace UnitsNet
                     new UnitInfo<DensityUnit>(DensityUnit.GramPerLiter, BaseUnits.Undefined),
                     new UnitInfo<DensityUnit>(DensityUnit.GramPerMilliliter, BaseUnits.Undefined),
                     new UnitInfo<DensityUnit>(DensityUnit.KilogramPerCubicCentimeter, BaseUnits.Undefined),
+                    new UnitInfo<DensityUnit>(DensityUnit.KilogramPerCubicDecimeter, new BaseUnits(length: LengthUnit.Decimeter, mass: MassUnit.Kilogram)),
                     new UnitInfo<DensityUnit>(DensityUnit.KilogramPerCubicMeter, BaseUnits.Undefined),
                     new UnitInfo<DensityUnit>(DensityUnit.KilogramPerCubicMillimeter, BaseUnits.Undefined),
                     new UnitInfo<DensityUnit>(DensityUnit.KilogramPerLiter, new BaseUnits(length: LengthUnit.Decimeter, mass: MassUnit.Kilogram)),
@@ -272,6 +273,11 @@ namespace UnitsNet
         ///     Get Density in KilogramsPerCubicCentimeter.
         /// </summary>
         public double KilogramsPerCubicCentimeter => As(DensityUnit.KilogramPerCubicCentimeter);
+
+        /// <summary>
+        ///     Get Density in KilogramsPerCubicDecimeter.
+        /// </summary>
+        public double KilogramsPerCubicDecimeter => As(DensityUnit.KilogramPerCubicDecimeter);
 
         /// <summary>
         ///     Get Density in KilogramsPerCubicMeter.
@@ -558,6 +564,15 @@ namespace UnitsNet
         {
             double value = (double) kilogramspercubiccentimeter;
             return new Density(value, DensityUnit.KilogramPerCubicCentimeter);
+        }
+        /// <summary>
+        ///     Get Density from KilogramsPerCubicDecimeter.
+        /// </summary>
+        /// <exception cref="ArgumentException">If value is NaN or Infinity.</exception>
+        public static Density FromKilogramsPerCubicDecimeter(QuantityValue kilogramspercubicdecimeter)
+        {
+            double value = (double) kilogramspercubicdecimeter;
+            return new Density(value, DensityUnit.KilogramPerCubicDecimeter);
         }
         /// <summary>
         ///     Get Density from KilogramsPerCubicMeter.
@@ -1253,6 +1268,7 @@ namespace UnitsNet
                 case DensityUnit.GramPerLiter: return _value/1;
                 case DensityUnit.GramPerMilliliter: return _value/1e-3;
                 case DensityUnit.KilogramPerCubicCentimeter: return (_value/1e-3) * 1e3d;
+                case DensityUnit.KilogramPerCubicDecimeter: return _value*1e3;
                 case DensityUnit.KilogramPerCubicMeter: return (_value/1e3) * 1e3d;
                 case DensityUnit.KilogramPerCubicMillimeter: return (_value/1e-6) * 1e3d;
                 case DensityUnit.KilogramPerLiter: return _value*1e3;
@@ -1319,6 +1335,7 @@ namespace UnitsNet
                 case DensityUnit.GramPerLiter: return baseUnitValue*1;
                 case DensityUnit.GramPerMilliliter: return baseUnitValue*1e-3;
                 case DensityUnit.KilogramPerCubicCentimeter: return (baseUnitValue*1e-3) / 1e3d;
+                case DensityUnit.KilogramPerCubicDecimeter: return baseUnitValue/1e3;
                 case DensityUnit.KilogramPerCubicMeter: return (baseUnitValue*1e3) / 1e3d;
                 case DensityUnit.KilogramPerCubicMillimeter: return (baseUnitValue*1e-6) / 1e3d;
                 case DensityUnit.KilogramPerLiter: return baseUnitValue/1e3;

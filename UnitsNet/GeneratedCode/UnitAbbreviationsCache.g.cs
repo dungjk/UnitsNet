@@ -195,6 +195,7 @@ namespace UnitsNet
                 ("en-US", typeof(DensityUnit), (int)DensityUnit.GramPerLiter, new string[]{"g/L"}),
                 ("en-US", typeof(DensityUnit), (int)DensityUnit.GramPerMilliliter, new string[]{"g/ml"}),
                 ("en-US", typeof(DensityUnit), (int)DensityUnit.KilogramPerCubicCentimeter, new string[]{"kg/cm³"}),
+                ("en-US", typeof(DensityUnit), (int)DensityUnit.KilogramPerCubicDecimeter, new string[]{"kg/dm³", "kg/dm3"}),
                 ("en-US", typeof(DensityUnit), (int)DensityUnit.KilogramPerCubicMeter, new string[]{"kg/m³"}),
                 ("ru-RU", typeof(DensityUnit), (int)DensityUnit.KilogramPerCubicMeter, new string[]{"кг/м³"}),
                 ("en-US", typeof(DensityUnit), (int)DensityUnit.KilogramPerCubicMillimeter, new string[]{"kg/mm³"}),

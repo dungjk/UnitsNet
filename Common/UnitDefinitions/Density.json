@@ -253,6 +253,22 @@
           "Abbreviations": [ "sg", "s.g" ]
         }
       ]
+    },
+    {
+      "SingularName": "KilogramPerCubicDecimeter",
+      "PluralName": "KilogramsPerCubicDecimeter",
+      "BaseUnits": {
+        "L": "Decimeter",
+        "M": "Kilogram"
+      },
+      "FromUnitToBaseFunc": "x*1e3",
+      "FromBaseToUnitFunc": "x/1e3",
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "kg/dm³", "kg/dm3" ]
+        }
+      ]
     }
   ]
 }
